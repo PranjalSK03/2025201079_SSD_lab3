@@ -59,3 +59,7 @@ db.sales.aggregate([
 10. For each task, qk_query.txt contains the query,
    and qk_output.txt contains the one-line JSON result.
 
+
+GITHUB:
+
+https://github.com/PranjalSK03/2025201079_SSD_lab3
