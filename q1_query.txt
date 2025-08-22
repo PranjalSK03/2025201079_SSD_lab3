@@ -1,0 +1,11 @@
+printjsononeline(
+  db.sales_work.insertOne({
+    orderId: "LAB_2025201079",
+    saleDate: new Date(),
+    items: [{ name: "notebook", tags: ["lab","custom"], price: 10.0, quantity: 1 }],
+    storeLocation: "Training",
+    customer: { email: "pranjal.katiyar@student.iiit.ac.in", age: 22, satisfaction: 4 },
+    couponUsed: false,
+    purchaseMethod: "Online"
+  })
+)

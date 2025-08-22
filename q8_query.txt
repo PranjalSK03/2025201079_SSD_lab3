@@ -1,0 +1,10 @@
+printjsononeline(
+  db.sales.aggregate([
+    { $unwind: "$items" },
+    { $unwind: "$items.tags" },
+    { $group: { _id: "$items.tags" } },
+    { $sort: { _id: 1 } },
+    { $group: { _id: null, tags: { $push: "$_id" } } },
+    { $project: { _id: 0, tags: 1 } }
+  ]).next().tags
+)

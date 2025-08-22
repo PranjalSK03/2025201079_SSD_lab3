@@ -1,0 +1,18 @@
+printjsononeline(
+  db.sales.aggregate([
+    { $project: {
+        purchaseMethod: 1,
+        distinctCount: { $size: { $setUnion: ["$items.name", []] } }
+    }},
+    { $group: {
+        _id: "$purchaseMethod",
+        avg_distinct_items: { $avg: "$distinctCount" }
+    }},
+    { $project: {
+        _id: 0,
+        purchaseMethod: "$_id",
+        avg_distinct_items: { $round: ["$avg_distinct_items", 2] }
+    }},
+    { $sort: { avg_distinct_items: -1, purchaseMethod: 1 } }
+  ]).toArray()
+)

@@ -1,0 +1,11 @@
+printjsononeline(
+  db.sales.aggregate([
+    { $unwind: "$items" },
+    { $set: { itemRevenue: { $multiply: [ { $toDouble: "$items.price" }, "$items.quantity" ] } } },
+    { $group: { _id: "$items.name", revenueSum: { $sum: "$itemRevenue" } } },
+    { $sort: { revenueSum: -1, _id: 1 } },
+    { $limit: 10 },
+    { $project: { _id: 0, name: "$_id", revenue: "$revenueSum" } }
+  ]).toArray()
+)
+

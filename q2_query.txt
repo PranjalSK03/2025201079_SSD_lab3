@@ -1,0 +1,14 @@
+printjsononeline(
+  db.sales_work.aggregate([
+    { $match: { orderId: "LAB_2025201079" } },
+    { $addFields: { firstItem: { $first: "$items.name" } } },
+    { $project: {
+        _id: 0,
+        orderId: 1,
+        storeLocation: 1,
+        purchaseMethod: 1,
+        item0: "$firstItem"
+    }}
+  ]).next()
+)
+
