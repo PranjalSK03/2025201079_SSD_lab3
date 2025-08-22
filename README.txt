@@ -1,3 +1,34 @@
+Name : Pranjal Singh Katiyar
+Roll No : 2025201079
+
+Folder structure : 
+2025201079_lab3/
+│
+├── q1_query.txt
+├── q1_output.txt
+├── q2_query.txt
+├── q2_output.txt
+├── q3_query.txt
+├── q3_output.txt
+├── q4_query.txt
+├── q4_output.txt
+├── q5_query.txt
+├── q5_output.txt
+├── q6_query.txt
+├── q6_output.txt
+├── q7_query.txt
+├── q7_output.txt
+├── q8_query.txt
+├── q8_output.txt
+├── q9_query.txt
+├── q9_output.txt
+├── q10_query.txt
+├── q10_output.txt
+│
+└── README.txt
+
+
+
 1. curl -L -o sales.json https://raw.githubusercontent.com/neelabalan/mongodb-sample-dataset/main/sample_supplies/sales.json
 
 2. mongoimport --uri "mongodb://localhost:27017" \
